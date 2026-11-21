@@ -1,4 +1,3 @@
-// CEK apakah sudah sesuai Kriteria Pengerjaan di SOAL, dan silakan EDIT hanya jika diperlukan
 import React, { useContext } from 'react';
 import parser from 'html-react-parser';
 import { showFormattedDate } from '../utils';
