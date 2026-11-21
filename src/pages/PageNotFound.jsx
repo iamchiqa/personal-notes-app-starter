@@ -1,4 +1,3 @@
-// CEK apakah sudah sesuai Kriteria Pengerjaan di SOAL, dan silakan EDIT hanya jika diperlukan 
 import React, { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import LocaleContext from '../contexts/LocaleContext';
