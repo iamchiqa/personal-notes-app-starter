@@ -1,4 +1,3 @@
-// EDIT & Kerjakan file App.jsx sesuai Kriteria Pengerjaan di SOAL
 import React, { useEffect, useState } from 'react';
 import { Routes, Route, Outlet } from 'react-router-dom';
 import NoteNavigation from './components/NoteNavigation';
