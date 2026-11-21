@@ -1,4 +1,3 @@
-// CEK apakah sudah sesuai Kriteria Pengerjaan di SOAL, dan silakan EDIT hanya jika diperlukan 
 // File ini khusus mengurus logika TEMA (default, terang, universe).
 const THEMES = ['default', 'light', 'universe'];
 
