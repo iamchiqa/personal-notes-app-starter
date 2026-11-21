@@ -1,4 +1,3 @@
-// EDIT & Kerjakan file index.jsx sesuai Kriteria Pengerjaan di SOAL
 // Navigasi use <Link>/<NavLink> dari react-router-dom, jadi pindah halaman TANPA reload (SPA).
 import React, { useContext, useState } from 'react';
 import { Link } from 'react-router-dom';
