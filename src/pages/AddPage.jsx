@@ -1,4 +1,3 @@
-// CEK apakah sudah sesuai Kriteria Pengerjaan di SOAL, dan silakan EDIT hanya jika diperlukan 
 import React, { useContext, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 import NoteInput from '../components/NoteInput';
