@@ -1,4 +1,3 @@
-// CEK apakah sudah sesuai Kriteria Pengerjaan di SOAL, dan silakan EDIT hanya jika diperlukan 
 // Tombol logo matahari-bulan untuk ganti tema.
 // Tiap diklik, tema app change: default -> terang -> universe -> default ...
 import React, { useContext } from 'react';
