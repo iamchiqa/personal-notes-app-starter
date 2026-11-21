@@ -1,0 +1,782 @@
+:root {
+  --primary: #BB86FC;
+  --primary-variant: #3700B3;
+  --secondary: #03DAC6;
+  --background: #121212;
+  --surface: #121212;
+  --error: #CF6679;
+  --warning: #F39C12;
+  --on-background: #FFFFFF;
+  --on-background-grey: #c7c7c7;
+  --on-surface: #FFFFFF;
+}
+
+[data-theme="light"] {
+  --background: #DDDDDD;
+  --suface: #FFFFFF;
+  --on-background: #333333;
+  --on-background-grey: #6d6d6d;
+  --on-surface: #333333;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+a {
+  color: var(--on-background);
+}
+
+
+body {
+  font-family: 'Inter', sans-serif;
+}
+
+.app-container {
+  color: var(--on-background);
+  background-color: var(--background);
+  min-height: 100vh;
+  transition: all ease-in-out 0.5s;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 16px;
+  border-bottom: 1px solid var(--on-background);
+}
+
+header h1 {
+  flex: 1;
+}
+
+header .navigation ul li {
+  display: inline-block;
+  font-size: 24px;
+  margin: 0 8px;
+}
+
+main {
+  margin: 0 auto;
+  padding: 32px 0;
+  width: 90%;
+  max-width: 1200px;
+}
+
+.notes-list {
+  margin-top: 32px;
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 16px;
+  padding: 16px 8px;
+}
+
+.notes-list-empty {
+  margin-top: 32px;
+  padding: 16px 8px;
+}
+
+.notes-list-empty p {
+  text-align: center;
+  color: var(--on-background-grey);
+}
+.note-item {
+  padding: 16px;
+  border-radius: 8px;
+  border: 1px solid var(--on-background);
+  border-top: 5px solid;
+}
+
+.note-item__title {
+  margin: 4px 0;
+}
+
+.note-item__createdAt {
+  color: var(--on-background-grey);
+  font-size: 14px;
+  margin: 4px 0;
+}
+
+.note-item__body {
+  margin-top: 16px;
+  overflow: hidden;
+  display: -webkit-box;
+  text-overflow: ellipsis;
+  -webkit-line-clamp: 6;
+  -webkit-box-orient: vertical;
+}
+
+.detail-page {
+  margin: 0 auto;
+  margin-top: 32px; 
+  width: 90%;
+}
+
+.detail-page__title {
+  font-size: 48px;
+  margin-bottom: 8px;
+  word-wrap: break-word;
+}
+
+.detail-page__createdAt {
+  color: var(--on-background-grey)
+}
+
+.detail-page__body {
+  line-height: 1.5;
+  margin-top: 36px;
+  font-size: 18px;
+}
+
+.detail-page__action, .homepage__action, .add-new-page__action {
+  position: fixed;
+  display: flex;
+  gap: 16px;
+  bottom: 32px;
+  right: 32px;
+}
+
+.action {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 32px;
+  border: 0;
+  width: 50px;
+  height: 50px;
+  border-radius: 50px;
+  background-color: var(--on-background);
+  color: var(--background);
+  padding: 8px;
+  cursor: pointer;
+}
+
+.add-new-page__input {
+  margin-top: 32px;
+}
+
+.add-new-page__input .add-new-page__input__title {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  color: var(--on-background);
+  font-family: 'Inter', sans-serif;
+  font-size: 64px;
+  font-weight: bold;
+  padding: 8px 0;
+}
+
+.add-new-page__input__title::placeholder {
+  color: var(--on-background-grey);
+}
+
+.add-new-page__input .add-new-page__input__body {
+  width: 100%;
+  background-color: transparent;
+  border: 0;
+  color: var(--on-background);
+  font-family: 'Inter', sans-serif;
+  font-size: 24px;
+  padding: 8px 0;
+  min-height: 500px;
+}
+
+[data-placeholder]:empty::before {
+  content: attr(data-placeholder);
+  color: var(--on-background-grey)
+}
+
+.search-bar input {
+  margin: 16px 0;
+  font-family: 'Inter', sans-serif;
+  background-color: transparent;
+  border: 1px solid var(--on-background);
+  border-radius: 4px;
+  padding: 8px;
+  width: 100%;
+  color: var(--on-background);
+}
+
+.search-bar input::placeholder {
+  color: var(--on-background-grey);
+}
+
+.toggle-theme, .toggle-locale {
+  background-color: transparent;
+  border: 0;
+  cursor: pointer;
+  color: var(--on-background);
+  display: flex;
+  align-items: center;
+  margin: 0 16px;
+}
+
+.toggle-theme {
+  font-size: 36px;
+}
+
+.toggle-locale {
+  font-size: 28px;
+}
+
+.input-login, .input-register {
+  margin: 32px 0;
+}
+
+.input-login label, .input-register label {
+  font-size: 24px;
+  font-weight: lighter;
+}
+
+.input-login input, .input-register input {
+  font-size: 18px;
+  font-family: 'Inter', sans-serif;
+  margin-top: 8px;
+  margin-bottom: 16px;
+  display: block;
+  width: 100%;
+  padding: 8px;
+  background-color: transparent;
+  border-radius: 8px;
+  border: 3px solid var(--on-background);
+  color: var(--on-background)
+}
+
+.input-login button, .input-register button {
+  font-family: 'Inter', sans-serif;
+  font-weight: bold;
+  font-size: 24px;
+  width: 100%;
+  padding: 12px;
+  border: 0;
+  border-radius: 8px;
+  background-color: var(--on-background);
+  color: var(--background);
+  cursor: pointer;
+}
+
+.button-logout {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  background-color: transparent;
+  border: 0;
+  font-size: 28px;
+  cursor: pointer;
+  color: var(--on-background);
+}
+
+@media screen and (min-width: 650px) {
+  .notes-list {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .detail-page__title { 
+    font-size: 64px;
+  }
+}
+
+@media screen and (min-width: 850px) {
+  .notes-list {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+@media screen and (min-width: 1200px) {
+  .notes-list {
+    grid-template-columns: repeat(4, 1fr);
+  }
+}
+
+/* ==========================================================================
+   VARIABEL WARNA BARU
+   --card-bg = warna latar kartu, --accent = warna aksen (garis atas kartu, logo, fokus),
+   --danger = warna teks pesan error.
+   ========================================================================== */
+:root {
+  --card-bg: #1c1c22;
+  --accent: var(--primary);
+  --danger: var(--error);
+}
+
+/* Tema TERANG  */
+[data-theme="light"] {
+  --card-bg: #FFFFFF;
+  --accent: var(--primary-variant);
+  --danger: #B00020;
+}
+
+/* Tema UNIVERSE. Menimpa variabel utama pakai var(--...) agar warna otomatis berubah. */
+[data-theme="universe"] {
+  --background: #0B0720;
+  --on-background: #ECE8FF;
+  --on-background-grey: #A99DFF;
+  --card-bg: rgba(27, 16, 70, 0.72);
+  --accent: #B794FF;
+  --danger: #FF8FA3;
+}
+
+/* Latar bintang + awan galaksi untuk tema universe. fixed langit */
+[data-theme="universe"] .app-container {
+  background-image:
+    radial-gradient(1.5px 1.5px at 24px 36px, #FFFFFF, transparent),
+    radial-gradient(1px 1px at 120px 150px, #CFC6FF, transparent),
+    radial-gradient(2px 2px at 70px 90px, #FFE7A3, transparent),
+    radial-gradient(1px 1px at 300px 40px, #FFFFFF, transparent),
+    radial-gradient(ellipse at 12% 8%, rgba(139, 92, 246, 0.38), transparent 52%),
+    radial-gradient(ellipse at 90% 92%, rgba(34, 211, 238, 0.22), transparent 55%),
+    linear-gradient(180deg, #0B0720 0%, #160A38 100%);
+  background-size:
+    260px 200px,
+    260px 200px,
+    410px 330px,
+    410px 330px,
+    auto,
+    auto,
+    auto;
+  background-attachment: fixed;
+}
+
+[data-theme="universe"] header {
+  border-bottom-color: var(--accent);
+}
+
+[data-theme="universe"] .action {
+  background-color: var(--accent);
+  color: #0B0720;
+}
+
+[data-theme="universe"] .note-item {
+  border-color: rgba(183, 148, 255, 0.35);
+  border-top-color: var(--accent);
+}
+
+[data-theme="universe"] .note-item:hover {
+  box-shadow: 0 0 22px rgba(183, 148, 255, 0.35);
+}
+
+[data-theme="light"] .note-item {
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.12);
+}
+
+/* ==========================================================================
+   HEADER: LOGO BUKU (GANTI TEMA) DAN MENU NAVIGASI
+   ========================================================================== */
+header h1.brand {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+}
+
+header h1 a {
+  text-decoration: none;
+}
+
+/* Tombol logo buku: transparan. */
+.theme-toggle {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  padding: 4px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 8px;
+  color: var(--accent);
+  cursor: pointer;
+  transition: transform 0.2s ease;
+}
+
+.theme-toggle:hover {
+  transform: translateY(-2px) rotate(-8deg);
+}
+
+.navigation__link {
+  padding: 4px 12px;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  text-decoration: none;
+  transition: border-color 0.2s ease, background-color 0.2s ease;
+}
+
+.navigation__link:hover {
+  border-color: var(--accent);
+}
+
+/* Menu active: warna dibalik (latar = warna teks, teks = warna latar). */
+.navigation__link--active {
+  background-color: var(--on-background);
+  color: var(--background);
+}
+
+/* Fokus untuk keyboard-user (tombol Tab) agar tahu now active elemen. */
+.theme-toggle:focus-visible,
+.navigation__link:focus-visible,
+.note-toolbar__button:focus-visible,
+.action:focus-visible,
+.note-item__title a:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* ==========================================================================
+   HALAMAN, PENCARIAN, KARTU CATATAN
+   ========================================================================== */
+main {
+  padding-bottom: 120px;
+}
+
+.page-title {
+  font-size: 28px;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: var(--accent);
+  box-shadow: 0 0 0 2px var(--accent);
+}
+
+.note-item {
+  position: relative;
+  background-color: var(--card-bg);
+  border-top-color: var(--accent);
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.3s ease;
+}
+
+.note-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+}
+
+/* Link judul tanpa garis bawah. */
+.note-item__title a {
+  text-decoration: none;
+}
+
+.note-item__title a::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: 8px;
+}
+
+.note-item__body,
+.detail-page__body,
+.add-new-page__input__body {
+  overflow-wrap: anywhere;
+}
+
+.note-item__body p,
+.detail-page__body p,
+.detail-page__body div {
+  margin-bottom: 8px;
+}
+
+.detail-page__body ul,
+.detail-page__body ol {
+  padding-left: 24px;
+}
+
+.detail-page__badge {
+  display: inline-block;
+  margin-left: 12px;
+  padding: 2px 10px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  color: var(--accent);
+  font-size: 13px;
+}
+
+.action {
+  transition: transform 0.15s ease, background-color 0.3s ease;
+}
+
+.action:hover {
+  transform: scale(1.08);
+}
+
+/* ==========================================================================
+   FORM TAMBAH/EDIT: TOOLBAR FORMAT TEKS DAN EDITOR
+   ========================================================================== */
+.note-toolbar {
+  display: flex;
+  gap: 8px;
+  margin: 8px 0 4px;
+}
+
+.note-toolbar__button {
+  width: 36px;
+  height: 36px;
+  border: 1px solid var(--on-background-grey);
+  border-radius: 8px;
+  background-color: transparent;
+  color: var(--on-background);
+  font-family: 'Inter', sans-serif;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+.note-toolbar__button:hover {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+.note-toolbar__bold {
+  font-weight: 700;
+}
+
+.note-toolbar__italic {
+  font-style: italic;
+}
+
+.note-toolbar__underline {
+  text-decoration: underline;
+}
+
+.add-new-page__input .add-new-page__input__body {
+  padding-top: 16px;
+  border-top: 1px dashed var(--on-background-grey);
+}
+
+.add-new-page__input .add-new-page__input__body:focus {
+  outline: none;
+}
+
+/* Pesan error validasi form (misal: judul dan isi kosong). */
+.form-error {
+  margin-top: 12px;
+  color: var(--danger);
+}
+
+/* ==========================================================================
+   PESAN HALAMAN 404 
+   ========================================================================== */
+.page-message {
+  display: grid;
+  justify-items: center;
+  gap: 12px;
+  margin-top: 48px;
+  text-align: center;
+}
+
+.page-message h2 {
+  font-size: 32px;
+}
+
+/* ==========================================================================
+   RESPONSIVE (LAYAR KECIL) DAN PREFERENSI GERAK
+   ========================================================================== */
+@media screen and (max-width: 649px) {
+  header {
+    flex-wrap: wrap;
+    gap: 8px;
+  }
+
+  header .navigation ul li {
+    font-size: 18px;
+  }
+
+  .add-new-page__input .add-new-page__input__title {
+    font-size: 36px;
+  }
+
+  .add-new-page__input .add-new-page__input__body {
+    font-size: 20px;
+  }
+}
+
+/* Animasi di sistem user dimatikan. */
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle,
+  .note-item,
+  .action,
+  .navigation__link {
+    transition: none;
+  }
+
+  .theme-toggle:hover,
+  .note-item:hover,
+  .action:hover {
+    transform: none;
+  }
+}
+/* Styling Tambahan Tulis Di bawah Ini */
+
+/* ==========================================================================
+   [TAMBAHAN V2] HEADER: tombol bahasa/tema/logout di kanan
+   ========================================================================== */
+/* Wadah tombol kanan header. */
+.header-actions {
+  display: flex;
+  align-items: center;
+}
+
+/* Tombol logo buku: buka/tutup sidebar (gaya sama seperti tombol logo lama). */
+.sidebar-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 4px;
+  background-color: transparent;
+  border: 0;
+  border-radius: 8px;
+  color: var(--accent);
+  cursor: pointer;
+}
+
+/* Kode bahasa kecil (ID/EN) di samping logo translate. */
+.toggle-locale__code {
+  margin-left: 4px;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+/* Nama user di tombol logout dibuat lebih kecil dari ikon. */
+.button-logout span {
+  font-size: 16px;
+}
+
+/* ==========================================================================
+   [TAMBAHAN V2] SIDEBAR NAVIGASI (geser buka/tutup)
+   ========================================================================== */
+/* Lapisan gelap di belakang sidebar saat terbuka. */
+.sidebar-overlay {
+  position: fixed;
+  inset: 0;
+  background-color: rgba(0, 0, 0, 0.5);
+  z-index: 40;
+}
+
+/* Sidebar tersembunyi di kiri layar (geser keluar), tombol tab tidak bisa fokus saat tertutup. */
+.sidebar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 260px;
+  height: 100%;
+  padding: 72px 16px 16px;
+  background-color: var(--card-bg);
+  border-right: 1px solid var(--accent);
+  transform: translateX(-100%);
+  visibility: hidden;
+  transition: transform 0.3s ease, visibility 0.3s ease;
+  z-index: 50;
+}
+
+/* Saat terbuka: geser masuk. */
+.sidebar--open {
+  transform: translateX(0);
+  visibility: visible;
+}
+
+/* Daftar menu di sidebar vertikal (menimpa gaya inline dari header). */
+.sidebar .navigation ul {
+  list-style: none;
+}
+
+.sidebar .navigation ul li {
+  display: block;
+  margin: 0 0 8px;
+  font-size: 18px;
+}
+
+.sidebar .navigation__link {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+}
+
+/* NavLink otomatis menambah class "active" di link yang cocok dengan URL. */
+.navigation__link.active {
+  background-color: var(--on-background);
+  color: var(--background);
+}
+
+/* ==========================================================================
+   [TAMBAHAN V2] INDIKATOR LOADING
+   ========================================================================== */
+.loading-indicator {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  padding: 48px 0;
+  color: var(--on-background-grey);
+}
+
+/* Lingkaran berputar. */
+.loading-indicator__spinner {
+  width: 40px;
+  height: 40px;
+  border: 4px solid var(--on-background-grey);
+  border-top-color: var(--accent);
+  border-radius: 50%;
+  animation: loading-spin 0.8s linear infinite;
+}
+
+@keyframes loading-spin {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+/* ==========================================================================
+   [TAMBAHAN V2] HALAMAN LOGIN & REGISTRASI
+   ========================================================================== */
+.auth-page {
+  max-width: 480px;
+  margin: 0 auto;
+}
+
+.auth-page h2 {
+  font-size: 32px;
+}
+
+.auth-page__link {
+  margin-top: 16px;
+  text-align: center;
+}
+
+/* Fokus keyboard untuk tombol baru. */
+.sidebar-toggle:focus-visible,
+.toggle-theme:focus-visible,
+.toggle-locale:focus-visible,
+.button-logout:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+}
+
+/* Tema universe: sidebar agak transparan agar bintang terlihat. */
+[data-theme="universe"] .sidebar {
+  border-right-color: var(--accent);
+}
+
+/* Matikan animasi jika user memilih reduced motion. */
+@media (prefers-reduced-motion: reduce) {
+  .sidebar,
+  .loading-indicator__spinner {
+    transition: none;
+    animation: none;
+  }
+}
+
+/* [TAMBAHAN V2] Tombol "Tambah catatan contoh" di beranda saat daftar kosong */
+.sample-button {
+  display: block;
+  margin: 16px auto 0;
+  padding: 10px 20px;
+  border: 1px solid var(--accent);
+  border-radius: 999px;
+  background-color: transparent;
+  color: var(--accent);
+  font-family: 'Inter', sans-serif;
+  cursor: pointer;
+}
+
+.sample-button:disabled {
+  opacity: 0.6;
+  cursor: wait;
+}
