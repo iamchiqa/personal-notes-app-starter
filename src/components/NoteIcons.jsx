@@ -1,4 +1,3 @@
-// CEK apakah sudah sesuai Kriteria Pengerjaan di SOAL, dan silakan EDIT hanya jika diperlukan 
 // File ini berisi kumpulan ikon SVG kecil.
 import React from 'react';
 
