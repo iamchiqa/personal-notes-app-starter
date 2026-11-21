@@ -1,4 +1,3 @@
-// CEK apakah sudah sesuai Kriteria Pengerjaan di SOAL, dan silakan EDIT hanya jika diperlukan 
 import React, { useContext, useEffect, useRef } from 'react';
 import NoteFormatToolbar from './NoteFormatToolbar';
 import LocaleContext from '../contexts/LocaleContext';
