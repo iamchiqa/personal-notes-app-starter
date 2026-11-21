@@ -1,4 +1,3 @@
-// CEK apakah sudah sesuai Kriteria Pengerjaan di SOAL, dan silakan EDIT hanya jika diperlukan
 import React, { useContext } from 'react';
 import NotesList from '../components/NotesList';
 import NoteSearch from '../components/NoteSearch';
