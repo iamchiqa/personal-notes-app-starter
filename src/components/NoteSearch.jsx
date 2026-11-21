@@ -1,4 +1,3 @@
-// CEK apakah sudah sesuai Kriteria Pengerjaan di SOAL, dan silakan EDIT hanya jika diperlukan 
 // Kolom pencarian catatan (controlled component).
 import React, { useContext } from 'react';
 import LocaleContext from '../contexts/LocaleContext';
