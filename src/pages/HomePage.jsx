@@ -1,4 +1,3 @@
-// CEK apakah sudah sesuai Kriteria Pengerjaan di SOAL, dan silakan EDIT hanya jika diperlukan 
 import React, { useContext, useState } from 'react';
 import NoteSampleButton from '../components/NoteSampleButton';
 import { getAllNotes } from '../utils/local-data';
