@@ -1,4 +1,3 @@
-// CEK apakah sudah sesuai Kriteria Pengerjaan di SOAL, dan silakan EDIT hanya jika diperlukan
 // Filter daftar note sesuai keyword di JUDUL catatan.
 function filterNotesByTitle(notes, keyword) {
   // Hapus spasi di awal/akhir lalu ubah ke huruf kecil
